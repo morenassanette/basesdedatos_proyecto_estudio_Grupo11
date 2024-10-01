@@ -1,27 +1,35 @@
-# Proyecto de Estudio!
-    
-**Estructura del documento principal:**
+# PRESENTACIÓN Proyecto de Estudio  “Gestión y Análisis de Bases de Datos implementadas en Aplicaciones Web”
 
-# PRESENTACIÓN (Título/Nombre Proyecto)
 
 **Asignatura**: Bases de Datos I (FaCENA-UNNE)
 
 **Integrantes**:
- - Sed vel lectus nec lectus placerat laoreet et sed est.
- - Sed ac justo ac mauris porttitor convallis non sit amet felis.
- - In tincidunt augue sed molestie malesuada.
+ - Ghio, Giovanni José
+ - Durand, Emilio
+ - Fernández, Vicente Gregorio
+ - Salinas Sanette, Morena Irupé
 
 **Año**: 2024
 
 ## CAPÍTULO I: INTRODUCCIÓN
 
-### Caso de estudio
-
-Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris tortor nisl, ultricies ac scelerisque nec, feugiat in nibh. 
-
 ### Definición o planteamiento del problema
 
-Pellentesque interdum aliquam magna sit amet rutrum. Nulla aliquam ligula nec quam iaculis dictum. In cursus aliquam cursus. Nullam a sem vel sapien iaculis finibus. Donec aliquam dictum viverra. Etiam ut orci lacus.
+El siguiente Proyecto de Estudio tiene como objetivo consolidar los conocimientos teóricos y prácticos adquiridos en la Cátedra, a través del desarrollo e implementación de una Base de Datos Relacional, complementada con una investigación conceptual de las técnicas utilizadas.
+
+Durante el proceso de creación de este proyecto, nos proponemos responder a preguntas cómo, ¿cuáles son los beneficios de la utilización de Gestores de Bases de Datos en el ámbito empresarial? ¿Cómo debemos delimitar el alcance de un sistema, de forma que cumpla con los niveles de optimización y funcionalidad esperados? ¿Cómo las nuevas tecnologías nos ayudan durante este proceso?
+
+### Caso de estudio
+
+El caso de estudio que elegimos para este trabajo es una Aplicación Web, diseñada para desempeñarse como una Gestión de Ventas. 
+Específicamente, tal sistema se ocupa de:
+    - gestionar los Usuarios que se registran en la página, sean clientes o los propios administradores definidos por la Empresa;
+    - gestionar los productos ofrecidos al público y la información sobre cada uno;
+    - las ventas generadas, pudiendo ser accedidas tanto por el comprador como los administradores de la página;
+    - controlar los diferentes métodos de pago disponibles y correspondiente envío al comprador
+    - posibilitar el envío de consultas para cualquier visitante de la página.
+    
+Definimos que el alcance de los envíos se extiende hasta el nivel nacional; por otro lado, establecemos que no se contemplan funciones que permitan a los usuarios dejar reseñas para los productos comprados, ni la posibilidad de devoluciones de los envíos realizados, como así tampoco se tiene en cuenta la gestión de proveedores de la empresa, ni las compras que se efectúen a través de ellos. En cuanto a los métodos de pago, el sistema limita a la elección de un único medio de pago por cada compra.
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
