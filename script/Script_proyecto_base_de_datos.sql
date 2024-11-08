@@ -29,7 +29,7 @@ CREATE TABLE Perfiles
 (
   id_perfil INT NOT NULL,
   descripcion VARCHAR(50) NOT NULL,
-  CONSTRAINT PK_PERFILES_ID_PERFILES  PRIMARY KEY (id_perfiles)
+  CONSTRAINT PK_PERFILES_ID_PERFILES  PRIMARY KEY (id_perfil)
 );
 
 CREATE TABLE metodos_de_pagos
