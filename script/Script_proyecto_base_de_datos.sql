@@ -80,6 +80,18 @@ CREATE TABLE Usuarios
   UNIQUE (DNI)
 );
 
+CREATE TABLE producto_detalle
+(
+  id_producto_detalle INT NOT NULL IDENTITY,
+  cantidad INT NOT NULL,
+  subtotal FLOAT NOT NULL,
+  id_producto INT NOT NULL,
+  id_factura INT NOT NULL,
+  CONSTRAINT PK_PRODUCTO_DETALLE_ID_PRODUCTO_DETALLE PRIMARY KEY (id_producto_detalle),
+  CONSTRAINT FK_PRODUCTO_DETALLE_ID_PRODUCTOS FOREIGN KEY (id_producto) REFERENCES Productos(id_producto),
+  CONSTRAINT CK_PRODUCTO_DETALLE_CANTIDAD CHECK (cantidad > 0)
+);
+
 CREATE TABLE Factura
 (
   id_factura INT NOT NULL IDENTITY,
@@ -93,17 +105,6 @@ CREATE TABLE Factura
   CONSTRAINT FK_FACTURA_ID_USUARIO FOREIGN KEY (id_producto_detalle) REFERENCES producto_detalle(id_producto_detalle)
 );
 
-CREATE TABLE producto_detalle
-(
-  id_producto_detalle INT NOT NULL IDENTITY,
-  cantidad INT NOT NULL,
-  subtotal FLOAT NOT NULL,
-  id_producto INT NOT NULL,
-  id_factura INT NOT NULL,
-  CONSTRAINT PK_PRODUCTO_DETALLE_ID_PRODUCTO_DETALLE PRIMARY KEY (id_producto_detalle),
-  CONSTRAINT FK_PRODUCTO_DETALLE_ID_PRODUCTOS FOREIGN KEY (id_producto) REFERENCES Productos(id_producto),
-  CONSTRAINT CK_PRODUCTO_DETALLE_CANTIDAD CHECK (cantidad > 0)
-);
 
 CREATE TABLE envios
 (
