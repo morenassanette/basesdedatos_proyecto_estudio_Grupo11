@@ -20,10 +20,12 @@ select * from factura
 
 select * from Contacto
 
+INSERT INTO Contacto (nombre, apellido, email, consulta) VALUES (' Mauricio', ' Covarrubias', 'Alexandro72@yahoo.com', ' ¿Puedo pagar en efectivo al recibir el pedido?');
+
 update Contacto
-set respuesta = 'No contamos con un local fisico en este momento, todas nuestas ventas son unicamente por la tienda online',
+set respuesta = 'No contamos con ese metodo de pago en este momento',
 respondido = 'si'
-where id_contacto = 2
+where consulta like '¿Puedo pagar en efectivo al recibir el pedido?'
 
 delete from Contacto
-where id_contacto = 500
+where id_contacto = 1
