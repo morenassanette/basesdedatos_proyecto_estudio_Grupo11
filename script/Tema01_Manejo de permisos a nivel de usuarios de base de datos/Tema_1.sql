@@ -1,6 +1,6 @@
 
 /*
-Se crean 4 usuarios de base de datos, cada uno con su respectivo LOGIN y contraseña
+Se crean 4 usuarios de base de datos, cada uno con su respectivo LOGIN y contraseÃ±a
 */
 
 
@@ -12,7 +12,6 @@ CREATE LOGIN giovani WITH PASSWORD = 'qwe333';
 
 CREATE LOGIN emilio WITH PASSWORD = 'qwe444';
 
-CREATE LOGIN pruebas WITH PASSWORD = '111';
 
 
 
@@ -32,7 +31,6 @@ CREATE USER empleado_deposito from LOGIN emilio;
 
 CREATE USER empleado_ventas from LOGIN giovani;
 
-CREATE USER pruebas from LOGIN pruebas;
 
 
 /*
@@ -50,8 +48,6 @@ y se le asignan los permisos a los roles personalizados creados previamente
 */
 
 GRANT SELECT,INSERT,DELETE,UPDATE ON Contacto to solo_contactos;
-
-GRANT SELECT ON Contacto to pruebas;
 
 GRANT SELECT,INSERT,UPDATE ON Productos to encargado_deposito;
 GRANT SELECT,INSERT,UPDATE ON producto_detalle to encargado_deposito;
@@ -73,6 +69,19 @@ EXEC sp_addrolemember 'encargado_ventas', 'empleado_ventas'
 
 EXEC sp_addrolemember 'db_owner' , 'administrador'
 
+/*
+En caso de necesidad se pueden usar las sentencias revoke o deny para quitar o prohibir permisos
+*/
+
+REVOKE DELETE ON Contacto FROM solo_contactos;
+
+REVOKE DELETE ON Productos FROM encargado_deposito;
+REVOKE DELETE ON producto_detalle FROM encargado_deposito;
+REVOKE DELETE ON Categorias FROM encargado_deposito;
+
+REVOKE DELETE ON Factura FROM encargado_ventas;
+REVOKE DELETE ON envios FROM encargado_ventas;
+REVOKE DELETE ON metodos_de_pagos FROM encargado_ventas;
 
 /*
 Todas las pruebas realizadas se encuentran en sus respectivas Query
