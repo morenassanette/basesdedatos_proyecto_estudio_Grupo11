@@ -102,7 +102,7 @@ CREATE TABLE Factura
   CONSTRAINT PK_FACTURA_ID_FACTURA PRIMARY KEY (id_factura),
   CONSTRAINT FK_FACTURA_ID_METODOS_PAGO FOREIGN KEY (id_metodo_pago) REFERENCES metodos_de_pagos(id_metodo_pago),
   CONSTRAINT FK_FACTURA_ID_USUARIO FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
-  CONSTRAINT FK_FACTURA_ID_USUARIO FOREIGN KEY (id_producto_detalle) REFERENCES producto_detalle(id_producto_detalle)
+  CONSTRAINT FK_FACTURA_ID_DETALLE FOREIGN KEY (id_producto_detalle) REFERENCES producto_detalle(id_producto_detalle)
 );
 
 
