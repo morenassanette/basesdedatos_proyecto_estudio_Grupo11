@@ -90,6 +90,7 @@ CREATE TABLE Factura
   CONSTRAINT PK_FACTURA_ID_FACTURA PRIMARY KEY (id_factura),
   CONSTRAINT FK_FACTURA_ID_METODOS_PAGO FOREIGN KEY (id_metodo_pago) REFERENCES metodos_de_pagos(id_metodo_pago),
   CONSTRAINT FK_FACTURA_ID_USUARIO FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
+  CONSTRAINT FK_FACTURA_ID_USUARIO FOREIGN KEY (id_producto_detalle) REFERENCES producto_detalle(id_producto_detalle)
 );
 
 CREATE TABLE producto_detalle
@@ -101,7 +102,6 @@ CREATE TABLE producto_detalle
   id_factura INT NOT NULL,
   CONSTRAINT PK_PRODUCTO_DETALLE_ID_PRODUCTO_DETALLE PRIMARY KEY (id_producto_detalle),
   CONSTRAINT FK_PRODUCTO_DETALLE_ID_PRODUCTOS FOREIGN KEY (id_producto) REFERENCES Productos(id_producto),
-  CONSTRAINT FK_PRODUCTO_DETALLE_ID_FACTURA FOREIGN KEY (id_factura) REFERENCES Factura(id_factura),
   CONSTRAINT CK_PRODUCTO_DETALLE_CANTIDAD CHECK (cantidad > 0)
 );
 
