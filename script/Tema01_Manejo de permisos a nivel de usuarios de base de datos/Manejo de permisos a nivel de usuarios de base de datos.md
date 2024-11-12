@@ -15,4 +15,17 @@ CREATE USER ‘Usuario_ejemplo ’ FOR LOGIN ‘Login_creado_previamente’;
 
 Los permisos  definen que puede y que no puede hacer un usuario en su respectiva base de datos, van desde los más simples donde solo se permite leer el contenido de una única tabla hasta la capacidad de poder crear o borrar tablas enteras, debido a esto es un tema importante sobre la seguridad de la base de datos y de su contenido, el saber que permisos otorgar a qué usuario o rol y cuáles directamente denegar para evitar inconsistencias en el futuro.Los permisos se pueden otorgar a cada usuario en específico o asignarles un rol personalizado y brindarle los permisos a este último, de esta manera se vuelve más eficiente la entrega, actualización y quita de permisos a un amplio número de usuarios.
 Los permisos se otorgan con el siguiente comando:
-GRANT (los permisos que se quieran otorgar) 
+GRANT (los permisos que se quieran otorgar) ON (nombre de la tabla) to (usuario o rol)
+
+Los roles son una forma de facilitar el otorgar permisos a una gran cantidad de usuarios,pueden estar asociados a múltiples tablas al mismo tiempo.Existen 2 tipos de roles:
+Los creados por un administrador, estos son completamente personalizables, desde su nombre pudiendo hacer referencia a una labor dentro del área en la que se trabaje, como sus límites en todas las tablas asociadas que posea.
+Los roles preestablecidos por SQL Server, estos son roles ya creados otorgan permisos generales sobre un servidor entero o sobre una base de datos entera.
+Algunos roles preestablecidos son:
+Para servidores 
+sysadmin: Tiene acceso completo sin restricciones a todas las funcionalidades de SQL Server.
+dbcreator: Puede crear, modificar, eliminar y restaurar bases de datos.
+securityadmin: Administra inicios de sesión y propiedades de sus bases de datos y puede otorgar, denegar y revocar permisos a nivel de servidor.
+Para bases de datos 
+db_owner: Tiene todos los permisos de la base de datos, incluida la capacidad de eliminar la base de datos.
+db_securityadmin: Administra roles y permisos a nivel de la base de datos.
+db_datareader: Puede leer todos los datos en todas las tablas de la base de datos.
