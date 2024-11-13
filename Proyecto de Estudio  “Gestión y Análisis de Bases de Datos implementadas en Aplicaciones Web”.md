@@ -152,7 +152,9 @@ Se presenta el informe teórico y los scripts para la realización de las tareas
 
 
 ## CAPÍTULO V: CONCLUSIONES
-En este proyecto, Hemos llevado a cabo el diseño y la implementación de una base de datos para una página de ventas, abordando diversos aspectos fundamentales sobre la gestión, la optimización y la seguridad de su contenido.Hemos aprendido e implementado cosas tales como la creación de una estructura sólida y eficiente,la implementación de un esquema de permisos que limita el acceso no autorizado y protege la privacidad de los datos, la automatización y optimización de tareas a través de los procedimientos almacenados,la optimización de las consultas mediante el uso de índices y a mantener la integridad de los datos durante su carga mediante el uso de transacciones.Este trabajo nos permitió aplicar conceptos teóricos y nos ayudó a mejorar nuestras habilidades en el diseño y gestión de una base de datos,preparándonos para futuros desafíos en entornos laborales profesionales.
+En este proyecto, Hemos llevado a cabo el diseño y la implementación de una base de datos para una página de ventas, abordando diversos aspectos fundamentales sobre la gestión, la optimización y la seguridad de su contenido.
+Hemos aprendido e implementado cosas tales como la creación de una estructura sólida y eficiente,la implementación de un esquema de permisos que limita el acceso no autorizado y protege la privacidad de los datos, la automatización y optimización de tareas a través de los procedimientos almacenados,la optimización de las consultas mediante el uso de índices y a mantener la integridad de los datos durante su carga mediante el uso de transacciones.
+Este trabajo nos permitió aplicar conceptos teóricos y nos ayudó a mejorar nuestras habilidades en el diseño y gestión de una base de datos,preparándonos para futuros desafíos en entornos laborales profesionales.
 
 
 
