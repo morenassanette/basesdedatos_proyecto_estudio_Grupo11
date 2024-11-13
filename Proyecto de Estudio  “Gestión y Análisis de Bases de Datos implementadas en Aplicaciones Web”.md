@@ -33,30 +33,80 @@ Definimos que el alcance de los envíos se extiende hasta el nivel nacional; por
 
 ## CAPITULO II: MARCO CONCEPTUAL O REFERENCIAL
 
-**TEMA 1 " ---- "** 
-Ut sed imperdiet risus. Maecenas vestibulum arcu vitae orci pretium pharetra. Suspendisse potenti. Fusce massa libero, fermentum eget elit in, tincidunt fermentum nunc. Cras imperdiet nisl elit, elementum gravida enim accumsan vel. Sed in sapien quis ante consectetur commodo id non nulla. Aenean lacinia, dolor convallis semper mattis, ante orci elementum nunc, eget feugiat risus neque in urna. Ut ut quam nec risus mollis convallis ornare ac odio. Phasellus efficitur posuere nibh, eget tempor augue pellentesque ac. Ut enim sem, imperdiet non est ut, blandit posuere dui. Curabitur at purus orci. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+**TEMA 1 "Manejo de permisos a nivel de usuarios de base de datos"**
+	Logins: Entidades de seguridad a nivel de servidor que permiten la autenticación de usuarios. Pueden ser de tres tipos: SQL Server, Windows, y Certificados/Claves Asimétricas.
+Usuarios: Entidades de seguridad a nivel de base de datos asociadas a logins. Determinan qué acciones puede realizar un usuario dentro de una base de datos.
+Roles: Agrupan permisos, facilitando la asignación y gestión de acceso. Existen roles predefinidos (como sysadmin, db_owner) y personalizados.
+Permisos: Controlan las operaciones que los usuarios pueden realizar en la base de datos. Se pueden asignar directamente a usuarios o a roles.
 
+**TEMA 2 "Procedimientos almacenados y funciones creadas por el usuario"**
+Procedimientos Almacenados: Son conjuntos de instrucciones SQL predefinidas que se pueden ejecutar bajo demanda. Ofrecen varios beneficios:
 
-**TEMA 2 " ----- "** 
-Ut sed imperdiet risus. Maecenas vestibulum arcu vitae orci pretium pharetra. Suspendisse potenti. Fusce massa libero, fermentum eget elit in, tincidunt fermentum nunc. Cras imperdiet nisl elit, elementum gravida enim accumsan vel. Sed in sapien quis ante consectetur commodo id non nulla. Aenean lacinia, dolor convallis semper mattis, ante orci elementum nunc, eget feugiat risus neque in urna. Ut ut quam nec risus mollis convallis ornare ac odio. Phasellus efficitur posuere nibh, eget tempor augue pellentesque ac. Ut enim sem, imperdiet non est ut, blandit posuere dui. Curabitur at purus orci. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+   Reducción del tráfico de red: Se ejecutan en un solo bloque de código en el servidor.
+   Mayor seguridad: Permiten ejecutar instrucciones específicas sin dar acceso completo a los datos, ocultando el código y protegiendo contra inyecciones maliciosas.
+   Reutilización de código: Reducen la complejidad y la inconsistencia del código.
+   Mejor rendimiento: Se compilan una vez y reutilizan el plan de ejecución para optimizar futuras ejecuciones.
+   Tipos:
+    	Creados por el usuario: Definidos según las necesidades del sistema.
+    	Temporales: Visibles solo durante la sesión activa.
+    	De sistema: Proporcionados por SQL Server para operaciones internas.
 
-...
+Funciones Definidas por el Usuario (UDF): Son rutinas que aceptan parámetros y devuelven un valor o conjunto de resultados. Sus ventajas incluyen:
+
+   Programación modular: Permiten reutilizar código almacenado.
+   Mejora del rendimiento: Se ejecutan sin necesidad de ser analizadas nuevamente.
+   Reducción del tráfico de red: Agrupan resultados en menos filas.
+   Tipos:
+    	Escalares: Devuelven un solo valor.
+    	De tabla: Devuelven un conjunto de resultados tipo tabla.
+    	De sistema: Funciones proporcionadas por SQL Server para tareas específicas.
+
+**TEMA 3 "Manejo de Transacciones y Transacciones Anidadas en SQL Server"**
+	Generación de Índices: Los índices son estructuras que mejoran la eficiencia en la búsqueda de datos. Se crean en columnas clave identificadas en las cláusulas WHERE, JOIN, ORDER BY o GROUP BY. Los tipos principales son:
+    	Índice Clustered (Agrupado): Organiza físicamente los datos en el disco. Solo puede haber uno por tabla.
+    	Índice Non-clustered (No Agrupado): Estructura separada con punteros a las filas reales. Una tabla puede tener varios.
+
+   Propósito de los Índices: Aceleran las consultas al permitir el acceso directo a los registros, evitando un escaneo completo de la tabla.
+
+   Ventajas:
+    	Mejora la velocidad de consultas y uniones (JOIN).
+    	Acelera la clasificación y agrupación de datos.
+    	Reduce el uso de recursos (CPU, memoria).
+    	Mejora la escalabilidad en grandes volúmenes de datos.
+
+   Desventajas:
+    	Los índices pueden ralentizar las operaciones de escritura (inserciones, actualizaciones y eliminaciones) debido a la necesidad de actualizarlos.
+
+El uso de índices debe ser estratégico, equilibrando el beneficio en lecturas con el impacto en las escrituras.
+
+**TEMA 4 "Manejo de Transacciones y Transacciones Anidadas en SQL Server"**
+Transacciones: Conjunto de operaciones ejecutadas como una unidad. Garantizan la coherencia mediante el modelo ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad).
+Tipos de transacciones:
+
+   Implícitas: Iniciadas automáticamente por SQL Server con operaciones DML.
+   Explícitas: Iniciadas por el usuario usando comandos específicos.
+   Anidadas: Transacciones dentro de otras, permitiendo control jerárquico y manejo modular de errores.
+
+Ventajas: Mejoran la seguridad y la integridad de los datos, permitiendo la reversión de operaciones en caso de error.
 
 ## CAPÍTULO III: METODOLOGÍA SEGUIDA 
 
-Donec lobortis tincidunt erat, non egestas mi volutpat in. Cras ante purus, luctus sed fringilla non, ullamcorper at eros.
+El trabajo se llevó a cabo en varias etapas que facilitaron una ejecución ordenada y eficiente del proyecto. A continuación se describen las principales fases del proceso:
+Investigación Inicial: Se realizó una revisión exhaustiva de la página web ya creada en Taller 1, llamada 0325. Este análisis permitió identificar las funcionalidades existentes y las necesidades de la aplicación. A partir de esta base, se definieron las entidades necesarias para la gestión de ventas y se establecieron los requerimientos específicos de la Base de Datos.
+Definición de Requerimientos: Se identificaron los requerimientos específicos de la aplicación de Gestión de Ventas. Esto incluyó definir las entidades clave, relaciones y atributos necesarios para el correcto funcionamiento del sistema.
+Modelado de la Base de Datos: Utilizando ERD Plus, se creó un Diagrama Entidad-Relación (ER) que representó gráficamente la estructura de la Base de Datos. Este diagrama ayudó a visualizar las interacciones entre las distintas entidades y a garantizar que todos los aspectos del sistema estuvieran contemplados.
+Implementación en SQL Server: Con el modelo aprobado, se procedió a la creación de las tablas en SQL Server Management Studio. Se definieron las estructuras de las tablas, claves primarias y foráneas, así como las restricciones necesarias para asegurar la integridad de los datos.
+b. Herramientas (Instrumentos y procedimientos)
+Para la recolección y tratamiento de la información se utilizaron las siguientes herramientas y procedimientos:
+ERD Plus: Esta herramienta fue fundamental para el modelado de la Base de Datos. Permite crear diagramas ER de manera intuitiva, lo que facilitó la visualización de la estructura de la Base de Datos y las relaciones entre las diferentes entidades.
+SQL Server Management Studio: Se utilizó para la creación, gestión y consulta de la Base de Datos. Esta herramienta permitió implementar las tablas, definir relaciones, y ejecutar consultas SQL para manipular y extraer información de manera efectiva.
 
- **a) Cómo se realizó el Trabajo Práctico**
-Vestibulum rutrum feugiat molestie. Nunc id varius augue. Ut augue mauris, venenatis et lacus ut, mattis blandit urna. Fusce lobortis, quam non vehicula scelerisque, nisi enim ultrices diam, ac tristique libero ex nec orci.
 
- **b) Herramientas (Instrumentos y procedimientos)**
-Donec lobortis tincidunt erat, non egestas mi volutpat in. Cras ante purus, luctus sed fringilla non, ullamcorper at eros. Integer interdum id orci id rutrum. Curabitur facilisis lorem sed metus interdum accumsan. 
 
 
 ## CAPÍTULO IV: DESARROLLO DEL TEMA / PRESENTACIÓN DE RESULTADOS 
 
-Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris tortor nisl, ultricies ac scelerisque nec, feugiat in nibh. Pellentesque interdum aliquam magna sit amet rutrum. 
-
+Luego de la investigación y análisis de la información, se presentan los siguientes resultados.
 
 
 ### Diagrama relacional
@@ -69,19 +119,30 @@ Acceso al documento [PDF](doc/Diccionario%20de%20datos.pdf) del diccionario de d
 
 ### Desarrollo TEMA 1 "----"
 
-En SQL Server el manejo de logins y usuarios es una pieza fundamental en la estructura y la seguridad de servidores y bases de datos respectivamente.
+### Desarrollo TEMA 1 "Manejo de permisos a nivel de usuarios de base de datos"
 
-Los logins son entidades de seguridad a nivel de servidores, permiten a un usuario autenticarse en el servidor sirviendo de credenciales con su respectivo usuario y contraseña... 
+Se presenta el informe teórico y los scripts para la realización de las tareas de análisis de manejo de permisos.
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/Tema01_Manejo_de_permisos/Manejo_de_permisos_a_nivel_de_usuarios_de_base_de_datos.md)
+> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/Tema01_Manejo_de_permisos_a_nivel_de_usuarios_de_base_de_datos)
 
-### Desarrollo TEMA 2 "----"
+### Desarrollo TEMA 2 "Procedimientos almacenados y funciones"
 
-Proin aliquet mauris id ex venenatis, eget fermentum lectus malesuada. Maecenas a purus arcu. Etiam pellentesque tempor dictum. 
+Se presenta el informe teórico y los scripts para la realización de las tareas de creación y análisis de procedimientos y funciones almacenadas.
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_2](script/tema02_nombre_tema)
+> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_2](script/tema02_Procedimientos_almacenados_y_funciones)
 
-... 
+### Desarrollo TEMA 3 "Optimización de consultas a través de índices"
+
+Se presenta el informe teórico y los scripts para la realización de las tareas de optimización de consultas a través de índices.
+
+> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_3](script/Tema3_script/Tema3_Optimización_de_consultas_a_través_de_índices)
+
+### Desarrollo TEMA 4 "Manejo de transacciones y transacciones anidadas"
+
+Se presenta el informe teórico y los scripts para la realización de las tareas de manejo de transacciones.
+
+> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_4](script/Tema3_script/script/Tema04_Manejo_de_transacciones_y_transacciones_anidadas)
+
 
 
 ## CAPÍTULO V: CONCLUSIONES
@@ -92,9 +153,6 @@ Nunc sollicitudin purus quis ante sodales luctus. Proin a scelerisque libero, vi
 
 ## BIBLIOGRAFÍA DE CONSULTA
 
- 1. List item
- 2. List item
- 3. List item
- 4. List item
- 5. List item
+ 1. [Microsoft Learn](https://learn.microsoft.com/es-es/sql/?view=sql-server-ver16)
+ 2. Camuña Rodríguez, J. F. (2015). Lenguajes de definición y modificación de datos SQL (UF1472): ( ed.). Antequera, Málaga, Spain: IC Editorial. 
 
