@@ -92,13 +92,19 @@ Ventajas: Mejoran la seguridad y la integridad de los datos, permitiendo la reve
 ## CAPÍTULO III: METODOLOGÍA SEGUIDA 
 
 El trabajo se llevó a cabo en varias etapas que facilitaron una ejecución ordenada y eficiente del proyecto. A continuación se describen las principales fases del proceso:
+
 Investigación Inicial: Se realizó una revisión exhaustiva de la página web ya creada en Taller 1, llamada 0325. Este análisis permitió identificar las funcionalidades existentes y las necesidades de la aplicación. A partir de esta base, se definieron las entidades necesarias para la gestión de ventas y se establecieron los requerimientos específicos de la Base de Datos.
+
 Definición de Requerimientos: Se identificaron los requerimientos específicos de la aplicación de Gestión de Ventas. Esto incluyó definir las entidades clave, relaciones y atributos necesarios para el correcto funcionamiento del sistema.
+
 Modelado de la Base de Datos: Utilizando ERD Plus, se creó un Diagrama Entidad-Relación (ER) que representó gráficamente la estructura de la Base de Datos. Este diagrama ayudó a visualizar las interacciones entre las distintas entidades y a garantizar que todos los aspectos del sistema estuvieran contemplados.
 Implementación en SQL Server: Con el modelo aprobado, se procedió a la creación de las tablas en SQL Server Management Studio. Se definieron las estructuras de las tablas, claves primarias y foráneas, así como las restricciones necesarias para asegurar la integridad de los datos.
+
 b. Herramientas (Instrumentos y procedimientos)
 Para la recolección y tratamiento de la información se utilizaron las siguientes herramientas y procedimientos:
+
 ERD Plus: Esta herramienta fue fundamental para el modelado de la Base de Datos. Permite crear diagramas ER de manera intuitiva, lo que facilitó la visualización de la estructura de la Base de Datos y las relaciones entre las diferentes entidades.
+
 SQL Server Management Studio: Se utilizó para la creación, gestión y consulta de la Base de Datos. Esta herramienta permitió implementar las tablas, definir relaciones, y ejecutar consultas SQL para manipular y extraer información de manera efectiva.
 
 
