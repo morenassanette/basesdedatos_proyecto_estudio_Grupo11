@@ -73,7 +73,7 @@ En SQL Server el manejo de logins y usuarios es una pieza fundamental en la estr
 
 Los logins son entidades de seguridad a nivel de servidores, permiten a un usuario autenticarse en el servidor sirviendo de credenciales con su respectivo usuario y contraseña... 
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/Tema01_Manejo de permisos a nivel de usuarios de base de datos/Manejo de permisos a nivel de usuarios de base de datos.md)
+> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/Tema01_Manejo_de_ permisos/Manejo_de_permisos_a_nivel_de_usuarios_de_base_de_datos.md)
 
 ### Desarrollo TEMA 2 "----"
 
