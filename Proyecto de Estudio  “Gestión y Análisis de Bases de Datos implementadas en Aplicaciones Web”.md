@@ -59,19 +59,6 @@ Maecenas molestie lacus tincidunt, placerat dolor et, ullamcorper erat. Mauris t
 
 
 
-### Diagrama conceptual (opcional)
-Ejemplo usando Live Editor https://mermaid.js.org/ (ejemplo opcional)
-```mermaid
-erDiagram
-CUSTOMER  }|..|{  DELIVERY-ADDRESS  : has
-CUSTOMER  ||--o{  ORDER  : places
-CUSTOMER  ||--o{  INVOICE  : "liable for"
-DELIVERY-ADDRESS  ||--o{  ORDER  : receives
-INVOICE  ||--|{  ORDER  : covers
-ORDER  ||--|{  ORDER-ITEM  : includes
-PRODUCT-CATEGORY  ||--|{  PRODUCT  : contains
-PRODUCT  ||--o{  ORDER-ITEM  : "ordered in"
-```
 ### Diagrama relacional
 ![diagrama_relacional](https://github.com/morenassanette/basesdedatos_proyecto_estudio_Grupo11/blob/main/doc/ERD_Proyecto.png)
 
@@ -82,9 +69,11 @@ Acceso al documento [PDF](doc/Diccionario%20de%20datos.pdf) del diccionario de d
 
 ### Desarrollo TEMA 1 "----"
 
-Fusce auctor finibus lectus, in aliquam orci fermentum id. Fusce sagittis lacus ante, et sodales eros porta interdum. Donec sed lacus et eros condimentum posuere. 
+En SQL Server el manejo de logins y usuarios es una pieza fundamental en la estructura y la seguridad de servidores y bases de datos respectivamente.
 
-> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/tema01_nombre_tema)
+Los logins son entidades de seguridad a nivel de servidores, permiten a un usuario autenticarse en el servidor sirviendo de credenciales con su respectivo usuario y contraseña... 
+
+> Acceder a la siguiente carpeta para la descripción completa del tema [scripts-> tema_1](script/Tema01_Manejo de permisos a nivel de usuarios de base de datos/Manejo de permisos a nivel de usuarios de base de datos.md)
 
 ### Desarrollo TEMA 2 "----"
 
